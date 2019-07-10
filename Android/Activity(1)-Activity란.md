@@ -30,13 +30,16 @@
 - "위젯"이란 화면에 시각적(및 대화형) 요소를 제공하는 뷰이다. 예를 들어 버튼, 텍스트 필드, 체크박스나 그저 하나의 이미지일 수도 있습니다.
 - "레이아웃"은 선형 레이아웃, 격자형 레이아웃, 상대적 레이아웃과 같이 하위 레이아웃에 대해 독특한 레이아웃 모델을 제공하는 ViewGroup에서 파생된 뷰이다.
 
-    class MainActivity : AppCompatActivity() {
+```kotlin
+class MainActivity : AppCompatActivity() {
     
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-        }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
     }
+}
+```
+    
 
 ## Activity 시작
 
