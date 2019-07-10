@@ -14,12 +14,14 @@
 
 실제로 프로젝트에서도 AppCompatActivity를 확장받아서 BaseActivity를 만들고 프로젝트를 진행했었다. MVVM 패턴을 사용했던 프로젝트였기 때문에 DataBinding과 ViewModel을 제네릭을 활용하여 Activity에서 활용할 타입을 정해두었다.
 
-    public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel> extends AppCompatActivity
-        implements BaseFragment.Callback {
-    
-    		//...
-    
-    }
+```Java
+public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel> extends AppCompatActivity
+    implements BaseFragment.Callback {
+
+        //...
+
+}
+```
 
 ## Activity의 UI 구현
 
@@ -44,40 +46,43 @@ class MainActivity : AppCompatActivity() {
 ## Activity 시작
 
 다른 Activity를 시작하려면 startActivity()를 호출한 다음 이에 시작하고자 하는 액티비티를 설명하는 Intent를 전달하면 된다. (명시적 인텐트)
-
-    Intent intent = new Intent(this, SignInActivity.class);
-    startActivity(intent);
-
+```Java
+Intent intent = new Intent(this, SignInActivity.class);
+startActivity(intent);
+```
 Intent를 처리할 수 있는 Activity가 여러 개 있는 경우, 사용자가 어느 것을 사용할지 선택하도록 할 수 있다. (암시적 인텐트)
 
-    Intent intent = new Intent(Intent.ACTION_SEND);
-    intent.putExtra(Intent.EXTRA_EMAIL, recipientArray);
-    startActivity(intent);
-
+```Java
+Intent intent = new Intent(Intent.ACTION_SEND);
+intent.putExtra(Intent.EXTRA_EMAIL, recipientArray);
+startActivity(intent);
+```
 ### 결과에 대한 Activity 시작
 
 startActivityForResult()를 호출해서 액티비티를 시작한다. 그런 다음 후속 액티비티에서 결과를 받으려면, onActivityResult() 콜백 메서드를 구현한다. 해당 후속 액티비티가 완료되면, 이것이 Intent 형식으로 결과를 onActivityResult() 메서드에 반환한다.
 
-    private void pickContact() {
-        // Create an intent to "pick" a contact, as defined by the content provider URI
-        Intent intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI);
-        startActivityForResult(intent, PICK_CONTACT_REQUEST);
-    }
-    
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // If the request went well (OK) and the request was PICK_CONTACT_REQUEST
-        if (resultCode == Activity.RESULT_OK && requestCode == PICK_CONTACT_REQUEST) {
-            // Perform a query to the contact's content provider for the contact's name
-            Cursor cursor = getContentResolver().query(data.getData(),
-            new String[] {Contacts.DISPLAY_NAME}, null, null, null);
-            if (cursor.moveToFirst()) { // True if the cursor is not empty
-                int columnIndex = cursor.getColumnIndex(Contacts.DISPLAY_NAME);
-                String name = cursor.getString(columnIndex);
-                // Do something with the selected contact's name...
-            }
+```Java
+private void pickContact() {
+    // Create an intent to "pick" a contact, as defined by the content provider URI
+    Intent intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI);
+    startActivityForResult(intent, PICK_CONTACT_REQUEST);
+}
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    // If the request went well (OK) and the request was PICK_CONTACT_REQUEST
+    if (resultCode == Activity.RESULT_OK && requestCode == PICK_CONTACT_REQUEST) {
+        // Perform a query to the contact's content provider for the contact's name
+        Cursor cursor = getContentResolver().query(data.getData(),
+        new String[] {Contacts.DISPLAY_NAME}, null, null, null);
+        if (cursor.moveToFirst()) { // True if the cursor is not empty
+            int columnIndex = cursor.getColumnIndex(Contacts.DISPLAY_NAME);
+            String name = cursor.getString(columnIndex);
+            // Do something with the selected contact's name...
         }
     }
+}
+```
 
 ## Activity 종료
 

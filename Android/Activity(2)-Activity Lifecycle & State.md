@@ -29,39 +29,40 @@ onDestroy | 폐기 시 | 필요 없는 리소스를 해제. 액티비티 참조�
 ***onStop(), onDestroy() 함수는 호출되지 않을 수 있다.**
 
 ex) 메모리 부족으로 인해 onStop()을 안 탈 수 있다.
-
-    public class ExampleActivity extends Activity {
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            // The activity is being created.
-        }
-        @Override
-        protected void onStart() {
-            super.onStart();
-            // The activity is about to become visible.
-        }
-        @Override
-        protected void onResume() {
-            super.onResume();
-            // The activity has become visible (it is now "resumed").
-        }
-        @Override
-        protected void onPause() {
-            super.onPause();
-            // Another activity is taking focus (this activity is about to be "paused").
-        }
-        @Override
-        protected void onStop() {
-            super.onStop();
-            // The activity is no longer visible (it is now "stopped")
-        }
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
-            // The activity is about to be destroyed.
-        }
+```Java
+public class ExampleActivity extends Activity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // The activity is being created.
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // The activity is about to become visible.
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // The activity has become visible (it is now "resumed").
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Another activity is taking focus (this activity is about to be "paused").
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // The activity is no longer visible (it is now "stopped")
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // The activity is about to be destroyed.
+    }
+}
+```
     
 ## Activity 상태 저장
 
@@ -75,52 +76,56 @@ onSaveInstanceState()의 호출이 보장되지 않으므로 이것은 Activity�
 
 애플리케이션의 상태 저장 기능을 시험하는 좋은 방법은 기기를 회전해보고 화면 방향이 바뀌는지 확인하는 것이다.
 
-    override fun onSaveInstanceState(outState: Bundle?) {
-        // Save the user's current game state
-        outState?.run {
-            putInt(STATE_SCORE, currentScore)
-            putInt(STATE_LEVEL, currentLevel)
-        }
-    
-        // Always call the superclass so it can save the view hierarchy state
-        super.onSaveInstanceState(outState)
+```kotlin
+override fun onSaveInstanceState(outState: Bundle?) {
+    // Save the user's current game state
+    outState?.run {
+        putInt(STATE_SCORE, currentScore)
+        putInt(STATE_LEVEL, currentLevel)
     }
-    
-    companion object {
-        val STATE_SCORE = "playerScore"
-        val STATE_LEVEL = "playerLevel"
-    }
+
+    // Always call the superclass so it can save the view hierarchy state
+    super.onSaveInstanceState(outState)
+}
+
+companion object {
+    val STATE_SCORE = "playerScore"
+    val STATE_LEVEL = "playerLevel"
+}
+```
 
 onCreate()에서 복원하는 경우
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState) // Always call the superclass first
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState) // Always call the superclass first
-    
-        // Check whether we're recreating a previously destroyed instance
-        if (savedInstanceState != null) {
-            with(savedInstanceState) {
-                // Restore value of members from saved state
-                currentScore = getInt(STATE_SCORE)
-                currentLevel = getInt(STATE_LEVEL)
-            }
-        } else {
-            // Probably initialize members with default values for a new instance
-        }
-        // ...
-    }
-
-onStart() 메서드 호출 후 onRestoreInstanceState()에서 복원하는 경우
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-        // Always call the superclass so it can restore the view hierarchy
-        super.onRestoreInstanceState(savedInstanceState)
-    
-        // Restore state members from saved instance
-        savedInstanceState?.run {
+    // Check whether we're recreating a previously destroyed instance
+    if (savedInstanceState != null) {
+        with(savedInstanceState) {
+            // Restore value of members from saved state
             currentScore = getInt(STATE_SCORE)
             currentLevel = getInt(STATE_LEVEL)
         }
+    } else {
+        // Probably initialize members with default values for a new instance
     }
+    // ...
+}
+```
+
+onStart() 메서드 호출 후 onRestoreInstanceState()에서 복원하는 경우
+```kotlin
+override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    // Always call the superclass so it can restore the view hierarchy
+    super.onRestoreInstanceState(savedInstanceState)
+
+    // Restore state members from saved instance
+    savedInstanceState?.run {
+        currentScore = getInt(STATE_SCORE)
+        currentLevel = getInt(STATE_LEVEL)
+    }
+}
+```
 
 ## Activity 조정
 
