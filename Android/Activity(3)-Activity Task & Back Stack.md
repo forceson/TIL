@@ -64,9 +64,11 @@ startActivity()에 전달한 인텐트에 들어있는 플래그를 포함시키
 
 - FLAG_ACTIVITY_NEW_TASK
 
-singleTask와 동일 동작
+새로운 Task를 생성하여 그 Task 안에 액티비티를 추가할 때 사용한다. 단, 기존에 존재하는 Task들 중에 생성하려는 액티비티와 동일한 affinity를 가지고 있는 Task가 있다면 그곳으로 액티비티가 들어가게 된다.
 
 - FLAG_ACTIVITY_SINGLE_TOP
+
+시작되고 있는 액티비티가 백 스택 맨 위에 있는 액티비티인 경우, 해당 액티비티의 새 인스턴스를 생성하는 대신 기존 인스턴스가 onNewIntent()에 대한 호출을 받는다.
 
 singleTop과 동일 동작
 
@@ -83,6 +85,10 @@ singleTop과 동일 동작
 ```kotlin
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
 ```
+기타 플래그들은 아래 링크에서
+
+[https://developer.android.com/reference/android/content/Intent.html](https://developer.android.com/reference/android/content/Intent.html)
+
 ## taskAffinity
 
 - 액티비티가 어느 Task에 속하길 선호하는지 나타내는 것이다.
