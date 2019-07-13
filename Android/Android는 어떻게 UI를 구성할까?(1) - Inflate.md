@@ -98,7 +98,7 @@ IWindowSession.add(window)
 
 ## Surface
 
-[https://t1.daumcdn.net/cfile/tistory/232CCB4A586614EC1F](https://t1.daumcdn.net/cfile/tistory/232CCB4A586614EC1F)
+![https://t1.daumcdn.net/cfile/tistory/232CCB4A586614EC1F](https://t1.daumcdn.net/cfile/tistory/232CCB4A586614EC1F)
 
 각각의 Window는 고유한 Surface를 가진다. DecorView는 그릴 것이 있는 경우, 할당 받은 Surface에 그리게 된다. 여기서 그릴 것은 View의 Canvas에 그려진다. Application들이 가지고 있는 각 Surface들은 각각 BufferQueue에 연결되어 있으며 Surface에서 생성되는 화면의 정보가 BufferQueue에 축적되게 되면 이후 SurfaceFlinger에서 BufferQueue에 있는 Surface의 정보를 수신하게 된다. 각 Surface로부터 화면을 받은 SurfaceFlinger는 수신된 화면의 정보를 합성하게 되고 이를 디스플레이를 담당하는 HAL에 정보를 전달하게 되면 해당 화면이 안드로이드 기반 디바이스의 Display에 출력된다.
 
