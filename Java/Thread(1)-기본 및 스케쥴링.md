@@ -28,7 +28,7 @@ Created: Jul 15, 2019 5:48 PM
 ## 쓰레드 구현방법
 
 1. Thread 클래스 상속
-
+```Java
     class MyThread extends Thread {
     	public void run() { // ... } // Thread 클래스 run()을 오버라이딩
     }
@@ -36,9 +36,10 @@ Created: Jul 15, 2019 5:48 PM
     // ...
     
     thread.start(); // 실행대기 중이다가, 자신의 차례오면 실행
+```
 
  2. Runnable 인터페이스 구현
-
+```Java
     class MyThread implements Runnable {
     	public void run() { // ... } // Runnable 인터페이스의 run()을 구현
     }
@@ -47,7 +48,7 @@ Created: Jul 15, 2019 5:48 PM
     
     Thread thread = new Thread(runnable);
     thread.start();
-
+```
 - Thread 상속 시 다른 클래스의 상속을 못받으니 Runnable 구현하는 방법이 일반적이다.
 - Runnable 구현은 재사용성이 높고 코드 일관성 유지하기에 좋아 보다 객체지향적이다.
 - 쓰레드를 구현한다는 것은 작업 내용으로 run()의 블록을 채우는 것이다.
@@ -71,19 +72,19 @@ start()는 새로운 쓰레드가 작업을 실행하는데 필요한 콜스택�
 
  2. 새로운 쓰레드의 콜스택 생성
 
-| start() |   |           |
+| start() |   |BLANK|
 
-| main() |   |           |
+| main() |   |BLANK|
 
  3.  새로운 콜스택에서 run() 호출
 
-| start() |   |           |
+| start() |   |BLANK|
 
-| main() |   | run()  |
+| main() |   | run() |
 
  4. 두 개의 쓰레드에서 작업
 
-| start() |   |           |
+| start() |   |BLANK|
 
 | main() |   | run()  |
 
@@ -130,9 +131,7 @@ start()는 새로운 쓰레드가 작업을 실행하는데 필요한 콜스택�
 - 모든 쓰레드는 반드시 쓰레드 그룹에 포함되어 있어야하므로, 쓰레드 그룹을 지정하는 생성자를 사용하지 않은 쓰레드는 기본적으로 자신을 생성한 쓰레드와 같은 쓰레드 그룹에 속하게 된다.
 - 자바 어플리케이션이 실행되면, JVM은 main과 system이라는 쓰레드 그룹을 만들고 JVM 운영에 필요한 쓰레드를 생성해서 이 쓰레드 그룹에 포함시킨다.
 
-    ex) main 메서드를 수행하는 main Thread는 main Thread Group에 속한다.
-
-          GC를 수행하는 FinalizerThread는 system Thread Group에 속한다.
+    ex) main 메서드를 수행하는 main Thread는 main Thread Group에 속한다. GC를 수행하는 FinalizerThread는 system Thread Group에 속한다.
 
 - 우리가 생성하는 모든 쓰레드 그룹은 main Thread Group의 하위 쓰레드 그룹이다.
 - Thread의 ThreadGroup 관련 메서드
@@ -157,7 +156,9 @@ start()는 새로운 쓰레드가 작업을 실행하는데 필요한 콜스택�
 - 효율적인 멀티쓰레드 프로그램을 만들기 위해서는 보다 정교한 스케쥴링을 통해 프로세스에게 주어진 자원과 시간을 여러 쓰레드가 낭비없이 잘 사용하도록 프로그래밍 해야한다.
 - 상태관련 메서드
 
-|------|------------------------|
+
+메서드 | 설명
+-------------|------------------------
 |static void sleep(long mills, int nanos)|지정된 시간 (1/1000) 동안 쓰레드 일시정지. 지정시간 후, 실행대기(RUNNALBE 상태)|
 |void join(long mills, int nanos)|지정된 시간동안 쓰레드 실행, 지정 시간 후 작업종료되면 join()을 호출한 쓰레드로 다시 돌아와 실행계속. 일종의 대기|
 |void interrupt()|sleep()이나 join()에 의해 일시정지된 쓰레드를 실행대기 상태로 만든다. 해당 쓰레드에서는 InterruptException이 발생함으로써 일시정지 상태 해제|
@@ -168,17 +169,16 @@ start()는 새로운 쓰레드가 작업을 실행하는데 필요한 콜스택�
 
 - 쓰레드 상태
 
-|------|------------------------|
-|NEW|쓰레드 생성되고 아직 start() 호출 안된 상태|
+상태 | 설명
+------|------------------------
+NEW|쓰레드 생성되고 아직 start() 호출 안된 상태
 |RUNNABLE|실행 중 또는 실행 가능한 상태|
 |BLOCKED|동기화 블럭에 의해 일시정지된 상태(lock이 풀릴때까지 대기)|
 |WAITING|쓰레드의 작업이 종료되지는 않았지만 실행가능하지 않은 상태|
 |TIMED_WATING|(unrunnable)일시정지 상태. TIME_WAITING은 일시정지 시간 지정된 경우|
 |TERMINATED|쓰레드의 작업이 종료된 상태|
 
-[https://lh4.googleusercontent.com/oR0_liUxjMnfgFS-fSuc0x2vCCPLQ0Vdw6w2rBVGloaE_84tRNprqNJEJiyI1unMY8Vpj2CDK9GiQGy03_RmteRz-aM31iIQcZsVZhIH2cLrne_5nY9miXKDmQqEHdY60_WopC0](https://lh4.googleusercontent.com/oR0_liUxjMnfgFS-fSuc0x2vCCPLQ0Vdw6w2rBVGloaE_84tRNprqNJEJiyI1unMY8Vpj2CDK9GiQGy03_RmteRz-aM31iIQcZsVZhIH2cLrne_5nY9miXKDmQqEHdY60_WopC0)
-
-![](https://cdn1.howtodoinjava.com/wp-content/uploads/2016/04/Java-Thraed-Life-Cycle-States.jpg)
+![https://lh4.googleusercontent.com/oR0_liUxjMnfgFS-fSuc0x2vCCPLQ0Vdw6w2rBVGloaE_84tRNprqNJEJiyI1unMY8Vpj2CDK9GiQGy03_RmteRz-aM31iIQcZsVZhIH2cLrne_5nY9miXKDmQqEHdY60_WopC0](https://lh4.googleusercontent.com/oR0_liUxjMnfgFS-fSuc0x2vCCPLQ0Vdw6w2rBVGloaE_84tRNprqNJEJiyI1unMY8Vpj2CDK9GiQGy03_RmteRz-aM31iIQcZsVZhIH2cLrne_5nY9miXKDmQqEHdY60_WopC0)
 
 RUNNBALE은 쓰레드 Queue
 
