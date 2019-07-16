@@ -1,4 +1,4 @@
-# Thread(2) - 동기화
+# Thread(2) - 동기화와 원자성
 
 Created: Jul 16, 2019 11:12 PM
 
@@ -21,6 +21,10 @@ Created: Jul 16, 2019 11:12 PM
 
 ## synchronized 이용한 동기화 - 임계영역 설정
 
+[ThreadEx19](https://github.com/forceson/Thread-Study/blob/master/src/com/company/ThreadEx19.java)
+
+[ThreadEx20](https://github.com/forceson/Thread-Study/blob/master/src/com/company/ThreadEx20.java)
+
 1. 메서드 전체를 임계영역으로 지정 → 해당 메서드를 가진 객체에 lock을 건다. 메서드 종료시 lock 반환
 
 ```Java
@@ -37,11 +41,15 @@ Created: Jul 16, 2019 11:12 PM
     }
 ```
 
-임계영역은 멀티쓰레드 프로그램의 성능을 좌우하므로 가능하면 블럭을 이용해서 효율적ㅇ니 프로그램을 만들어야한다.
+임계영역은 멀티쓰레드 프로그램의 성능을 좌우하므로 가능하면 블럭을 이용해서 효율적인 프로그램을 만들어야한다.
 
 static메서드의 경우 class에 lock을 건다. instance와 다름.
 
 ## wait(), notify()
+
+[ThreadWaitEx1](https://github.com/forceson/Thread-Study/blob/master/src/com/company/ThreadWaitEx1.java)
+
+[ThreadWaitEx2](https://github.com/forceson/Thread-Study/blob/master/src/com/company/ThreadWaitEx2.java)
 
 - 특정 쓰레드가 객체의 lock을 가진 상태로 오랜 시간을 보내지 않게 하기 위해, wait(), notify() 고안
 
@@ -59,6 +67,8 @@ notify() - 작업을 중단했던 여러 쓰레드 중 하나의 쓰레드가 �
 - 문제는 기아 상태, 경쟁 상태 발생
 
 ## Lock과 Condition을 이용한 동기화
+
+[ThreadWaitEx3](https://github.com/forceson/Thread-Study/blob/master/src/com/company/ThreadWaitEx3.java)
 
 - From Java 1.5
 - ReentrantLock - 재진입이 가능한 lock. 가장 일반적인 배타 lock. 특정 조건에서 lock을 풀고 다시 lock을 얻고 임계영역으로 들어와서 이후의 작업 수행가능.
@@ -103,9 +113,26 @@ InterruptException - 지정된 시간동안 기다리는 도중 작업 취소될
 - 그러다보니 도중에 메모리에 저장된 변수 값이 변경되었는데도 캐시에 저장된 값이 갱신되지 않아 메모리에 저장된 값이 다른 경우가 발생.
 - volatile은 코어가 변수 값 읽어올 때 캐시 아닌 메모리에서 읽어오게 한다.
 - volatile 붙이는 대신 synchronized 블럭 사용해도 같은 효과. synchronized 블럭은 쓰레드가 블럭 출입 시 캐시 메모리간 동기화를 시킴.
-
 - JVM은 데이터를 4byte 단위로 처리하므로 int와 int보다 작은 타입들을 한 번에 읽거나 쓰는게 가능하다. 하나의 명령어는 더 이상 나눌 수 없는 최소 작업 단위이므로, 작업의 중간에 다른 쓰레드가 끼어들 틈이 없다.
 - 그러나 크기가 8byte인 long, double 타입의 변수는 다른 쓰레드가 끼어들 여지가 있다.
 - volatile을 쓰면 읽기 쓰기가 원자화된다. 작업을 나눌 수 없다는 이야기
 - synchronized 블럭도 일종의 원자화이다. 즉, synchronized 블럭은 여러 문장을 원자화 함으로써 쓰레드의 동기화를 구현한 것이라고 보면 된다.
 - volatile은 읽기 쓰기 원자와 일뿐 동기화는 아니라는 것에 주의해야한다.
+
+## Atomic 클래스
+
+- Atomic 클래스는 Compare and Swap 사용하여 원자적 연산을 수행할 수 있게 만들어졌다.
+- Compare and Swap은 값을 변경할 때 자신이 읽었던 변수의 값을 기억하고 있다가 변경 직전에 새로운 값이 들어왔을 때 새로운 값과 메모리가 담고 있던 값을 비교하여 같으면 메모리의 값을 새로운 값으로 대체하고, 아니면 무산시키는 것이다. 아래는 C언어로 구현된 Compare and Swap.
+
+```C
+    int compare_and_swap(int* reg, int oldval, int newval) {
+      int old_reg_val = *reg;
+      if (old_reg_val == oldval)
+         *reg = newval;
+      return old_reg_val;
+    }
+```
+
+- Atomic 클래스는 이러한 흐름의 Compare and Swap를 기반으로 동작한다.
+
+TODO: Executor, Callable, Future에 대해 알아보기, 병렬처리에 대해 알아보기
