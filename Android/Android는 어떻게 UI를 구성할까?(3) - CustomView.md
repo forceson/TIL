@@ -165,7 +165,7 @@ invalidate()와 requestLayout() 함수는 런타임에 뷰를 다시 그릴 수 
 
 onMeasure()부터 다시 뷰를 그린다. 뷰의 사이즈가 변경될 때 재측정이 필요하기 때문에 그렇다.
 
-### GuestureDetector
+### GestureDetector
 
 tapping, pulling, pushing, flinging, zooming 같은 현대적인 터치 UI 인터랙션을 제공하기 위해 제공되는 클래스이다.
 ```Java
