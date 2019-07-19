@@ -9,6 +9,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [Android는 어떻게 UI를 구성할까?(1) - Inflate](https://github.com/forceson/TIL/blob/master/Android/Android는%20어떻게%20UI를%20구성할까%3F(1)%20-%20Inflate.md)
 * [Android는 어떻게 UI를 구성할까?(2) - View](https://github.com/forceson/TIL/blob/master/Android/Android는%20어떻게%20UI를%20구성할까%3F(2)%20-%20View.md)
 * [Android는 어떻게 UI를 구성할까?(3) - CustomView](https://github.com/forceson/TIL/blob/master/Android/Android는%20어떻게%20UI를%20구성할까%3F(3)%20-%20CustomView.md)
+* [Context 정리](https://github.com/forceson/TIL/blob/master/Android/Context%20정리.md)
 ## Java
 * [Thread(1) - 기본 및 스케쥴링](https://github.com/forceson/TIL/blob/master/Java/Thread(1)-기본%20및%20스케쥴링.md)
 * [Thread(2) - 동기화와 원자성](https://github.com/forceson/TIL/blob/master/Java/Thread(2)-동기화와%20원자성.md)
