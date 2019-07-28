@@ -22,6 +22,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [[자료구조] Stack](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20Stack.md)
 * [[자료구조] Queue](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20Queue.md)
 * [[자료구조] 이진탐색트리](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20이진탐색트리.md)
+* [[자료구조] 우선순위 큐와 힙](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20우선순위%20큐와%20힙.md)
 ## 블로그
 * [추상클래스와 인터페이스의 활용 (Feat. Android)](https://forceson.github.io/android/%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%9D%98-%ED%99%9C%EC%9A%A9-(Feat.-Android)/)
 ## 후기
