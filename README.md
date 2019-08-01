@@ -15,6 +15,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [Service 정리](https://github.com/forceson/TIL/blob/master/Android/Service%20정리.md)
 * [BroadcastReceiver 정리](https://github.com/forceson/TIL/blob/master/Android/BroadcastReceiver%20정리.md)
 * [RxJava Rough한 정리](https://github.com/forceson/TIL/blob/master/Android/RxJava%20Rough한%20정리.md)
+* [RecyclerView 동적으로 Column 설정하기](https://github.com/forceson/TIL/blob/master/Android/RecyclerView%20동적으로%20Column%20설정하기.md)
 ## Java
 * [Thread(1) - 기본 및 스케쥴링](https://github.com/forceson/TIL/blob/master/Java/Thread(1)-기본%20및%20스케쥴링.md)
 * [Thread(2) - 동기화와 원자성](https://github.com/forceson/TIL/blob/master/Java/Thread(2)-동기화와%20원자성.md)
