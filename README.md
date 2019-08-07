@@ -15,6 +15,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [Service 정리](https://github.com/forceson/TIL/blob/master/Android/Service%20정리.md)
 * [BroadcastReceiver 정리](https://github.com/forceson/TIL/blob/master/Android/BroadcastReceiver%20정리.md)
 * [RxJava Rough한 정리](https://github.com/forceson/TIL/blob/master/Android/RxJava%20Rough한%20정리.md)
+* [Glide vs Picasso 매우 간단 비교](https://github.com/forceson/TIL/blob/master/Android/Glide%20vs%20Picasso%20매우%20간단%20비교.md)
 * [RecyclerView 동적으로 Column 설정하기](https://github.com/forceson/TIL/blob/master/Android/RecyclerView%20동적으로%20Column%20설정하기.md)
 * [Nested RecyclerView 가로 스크롤 초기화 해결](https://github.com/forceson/TIL/blob/master/Android/Nested%20RecyclerView%20가로%20스크롤%20초기화%20해결.md)
 * [MVP부터 MVVM ViewModel과 AAC ViewModel, Databinding 고찰 (업데이트 필요)](https://github.com/forceson/TIL/blob/master/Android/MVP부터%20MVVM%20ViewModel과%20AAC%20ViewModel,%20Databinding%20고찰.md)
