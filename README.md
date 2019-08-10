@@ -31,6 +31,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [[자료구조] 이진탐색트리](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20이진탐색트리.md)
 * [[자료구조] 우선순위 큐와 힙](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20우선순위%20큐와%20힙.md)
 * [[자료구조] 그래프](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20그래프.md)
+* [[디자인패턴] Singleton](https://github.com/forceson/TIL/blob/master/CS/[디자인패턴]%20Singleton.md)
 * [Conway’s Game Of Life](https://github.com/forceson/TIL/blob/master/CS/Conway%E2%80%99s%20Game%20Of%20Life.md)
 * [임시변수 없이 두 int 값 바꾸기](https://github.com/forceson/TIL/blob/master/CS/임시변수%20없이%20두%20int%20값%20바꾸기.md)
 ## 블로그
