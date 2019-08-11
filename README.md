@@ -11,6 +11,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [Android는 어떻게 UI를 구성할까?(3) - CustomView](https://github.com/forceson/TIL/blob/master/Android/Android는%20어떻게%20UI를%20구성할까%3F(3)%20-%20CustomView.md)
 * [Context 정리](https://github.com/forceson/TIL/blob/master/Android/Context%20정리.md)
 * [Android 플랫폼 아키텍처 정리](https://github.com/forceson/TIL/blob/master/Android/Android%20%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EC%A0%95%EB%A6%AC.md)
+* [Android APK 빌드 과정](https://github.com/forceson/TIL/blob/master/Android/Android%20APK%20%EB%B9%8C%EB%93%9C%20%EA%B3%BC%EC%A0%95.md)
 * [Intent 정리](https://github.com/forceson/TIL/blob/master/Android/Intent%20정리.md)
 * [Service 정리](https://github.com/forceson/TIL/blob/master/Android/Service%20정리.md)
 * [BroadcastReceiver 정리](https://github.com/forceson/TIL/blob/master/Android/BroadcastReceiver%20정리.md)
