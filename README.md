@@ -25,6 +25,8 @@ forceson's Daily Study - Android, Java, Kotlin
 ## Java
 * [Thread(1) - 기본 및 스케쥴링](https://github.com/forceson/TIL/blob/master/Java/Thread(1)-기본%20및%20스케쥴링.md)
 * [Thread(2) - 동기화와 원자성](https://github.com/forceson/TIL/blob/master/Java/Thread(2)-동기화와%20원자성.md)
+## Kotlin
+* [함수형 프로그래밍과 람다](https://github.com/forceson/TIL/blob/master/Kotlin/함수형%20프로그래밍과%20람다.md)
 ## CS
 * [[자료구조] ArrayList와 LinkedList](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20ArrayList와%20LinkedList.md)
 * [[자료구조] Stack](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20Stack.md)
