@@ -29,6 +29,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [함수형 프로그래밍과 람다](https://github.com/forceson/TIL/blob/master/Kotlin/함수형%20프로그래밍과%20람다.md)
 * [고차 함수](https://github.com/forceson/TIL/blob/master/Kotlin/고차%20함수.md)
 * [인라인 함수, 클로저](https://github.com/forceson/TIL/blob/master/Kotlin/인라인%20함수,%20클로저.md)
+* [컬렉션 타입과 람다](https://github.com/forceson/TIL/blob/master/Kotlin/컬렉%20타입과%20람다.md)
 ## CS
 * [[자료구조] ArrayList와 LinkedList](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20ArrayList와%20LinkedList.md)
 * [[자료구조] Stack](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20Stack.md)
