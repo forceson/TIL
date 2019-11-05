@@ -32,6 +32,8 @@ forceson's Daily Study - Android, Java, Kotlin
 * [컬렉션 타입과 람다](https://github.com/forceson/TIL/blob/master/Kotlin/컬렉%20타입과%20람다.md)
 * [Null 안전성](https://github.com/forceson/TIL/blob/master/Kotlin/Null%20안전성.md)
 * [예외 처리](https://github.com/forceson/TIL/blob/master/Kotlin/예외%20처리.md)
+* [by를 이용한 delegate 패턴](https://github.com/forceson/TIL/blob/master/Kotlin/by를%20이용한%20delegate%20패턴.md)
+* [SAM & typealias](https://github.com/forceson/TIL/blob/master/Kotlin/SAM%20&%20typealias.md)
 ## CS
 * [[자료구조] ArrayList와 LinkedList](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20ArrayList와%20LinkedList.md)
 * [[자료구조] Stack](https://github.com/forceson/TIL/blob/master/CS/[자료구조]%20Stack.md)
