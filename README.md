@@ -26,6 +26,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [Thread(1) - 기본 및 스케쥴링](https://github.com/forceson/TIL/blob/master/Java/Thread(1)-기본%20및%20스케쥴링.md)
 * [Thread(2) - 동기화와 원자성](https://github.com/forceson/TIL/blob/master/Java/Thread(2)-동기화와%20원자성.md)
 * [입출력(1) - 기본](https://github.com/forceson/TIL/blob/master/Java/입출력(1)-기본.md)
+* [입출력(2) - 바이트 기반 스트림](https://github.com/forceson/TIL/blob/master/Java/입출력(2)-바이트%20기반%20스트림.md)
 ## Kotlin
 * [함수형 프로그래밍과 람다](https://github.com/forceson/TIL/blob/master/Kotlin/함수형%20프로그래밍과%20람다.md)
 * [고차 함수](https://github.com/forceson/TIL/blob/master/Kotlin/고차%20함수.md)
