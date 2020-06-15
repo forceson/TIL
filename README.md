@@ -22,6 +22,7 @@ forceson's Daily Study - Android, Java, Kotlin
 * [RecyclerView 동적으로 Column 설정하기](https://github.com/forceson/TIL/blob/master/Android/RecyclerView%20동적으로%20Column%20설정하기.md)
 * [Nested RecyclerView 가로 스크롤 초기화 해결](https://github.com/forceson/TIL/blob/master/Android/Nested%20RecyclerView%20가로%20스크롤%20초기화%20해결.md)
 * [MVP부터 MVVM ViewModel과 AAC ViewModel, Databinding 고찰 (업데이트 필요)](https://github.com/forceson/TIL/blob/master/Android/MVP부터%20MVVM%20ViewModel과%20AAC%20ViewModel,%20Databinding%20고찰.md)
+* [Unit Test - Error: "Method ... not mocked"](https://github.com/forceson/TIL/blob/master/Android/Unit%20Test%20-%20Error:%20%22Method%20...%20not%20mocked%22.md)
 ## Java
 * [Thread(1) - 기본 및 스케쥴링](https://github.com/forceson/TIL/blob/master/Java/Thread(1)-기본%20및%20스케쥴링.md)
 * [Thread(2) - 동기화와 원자성](https://github.com/forceson/TIL/blob/master/Java/Thread(2)-동기화와%20원자성.md)
